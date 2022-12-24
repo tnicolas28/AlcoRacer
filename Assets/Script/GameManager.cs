@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     // doit être accessible de tous nos scripts = public + static
     public static GameManager Instance { get; private set; }
 
+
+    public GameOverScreen GameOverScreen;
+
     private void Awake()
     {
         // Si une instance existe déjà,
@@ -51,14 +54,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GameOver()
     {
+        GameOverScreen.Setup();
         yield return new WaitForSeconds(delayBeforeUI);
-
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-
-        //UiBtnPlay.SetActive(true);
-        //gameState = GameState.waiting;
     }
 
 
@@ -66,6 +64,8 @@ public class GameManager : MonoBehaviour
     public void LaunchGame()
     {
         UiBtnPlay.SetActive(false);
+        Debug.Log("Starting");
+
 
         gameState = GameState.playing;
     }

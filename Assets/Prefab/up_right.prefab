@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5423142637096768162}
   - component: {fileID: 1673319356533980938}
   - component: {fileID: -3319536593911739392}
+  - component: {fileID: -3528098664735245956}
+  - component: {fileID: -7829402111765252111}
+  - component: {fileID: 2929572864102245447}
   m_Layer: 0
   m_Name: up_right
   m_TagString: Road
@@ -71,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1874666993
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0e5aa834ac54a495d8fcd8ef57ed54e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,6 +103,81 @@ MonoBehaviour:
   roads:
   - {fileID: 6428166949300688047, guid: 3d1adc0979874467c9ba4abc9d93c332, type: 3}
   - {fileID: 242551829474562756, guid: 5b41623a9cc6545b1b0fef7e0dbf4e90, type: 3}
+  isLine: 0
   coordonate: 0
   orientation: 1
   previousRoad: 2
+--- !u!114 &-3528098664735245956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156420475235882629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe0962931aa74d599595c69d788e556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &-7829402111765252111
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156420475235882629}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5575069, y: -0.5575069}
+      - {x: 0.52632177, y: -0.63688153}
+      - {x: 0.64, y: -0.64}
+      - {x: 0.633763, y: -0.51072943}
+--- !u!60 &2929572864102245447
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156420475235882629}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.64, y: 0.64}
+      - {x: -0.64, y: -0.64}
+      - {x: -0.51918674, y: -0.6391433}
+      - {x: -0.447521, y: -0.17151007}
+      - {x: -0.22070795, y: 0.17081195}
+      - {x: 0.19854994, y: 0.46200955}
+      - {x: 0.64147455, y: 0.5243395}
+      - {x: 0.64, y: 0.64}

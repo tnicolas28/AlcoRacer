@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static GenerateNextRoute;
 
 public class Spawner : MonoBehaviour
@@ -14,17 +15,34 @@ public class Spawner : MonoBehaviour
 
     public GenerateNextRoute curentRoad;
 
-    public int maxRoutes;
+    public int spawnDistaneceMagnitude = 5;
 
+    public int maxRoutes;
     private Orientation previous;
 
+    public GameObject player;
+
+    Vector2 spawnDistance;
 
     private void Start()
     {
 
-        for(int i = 0; i < maxRoutes; i++)
+        spawnDistance.x = transform.position.x + spawnDistaneceMagnitude;
+        spawnDistance.y = transform.position.y + spawnDistaneceMagnitude;
+    }
+
+    private void Update()
+    {
+        Vector2 currentDistance;
+        currentDistance.x = transform.position.x - player.transform.position.x;
+        currentDistance.y = transform.position.y - player.transform.position.y;
+
+        if (currentDistance.x < spawnDistance.x && currentDistance.y < spawnDistance.y)
         {
-            CreateRoad();
+            for (int i = 0; i < 5; i++)
+            {
+                CreateRoad();
+            }
         }
     }
 
