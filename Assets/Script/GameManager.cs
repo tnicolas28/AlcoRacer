@@ -19,12 +19,10 @@ public class GameManager : MonoBehaviour
 
 
     public GameOverScreen GameOverScreen;
+    public Steering SteeringWheel;
 
     private void Awake()
     {
-        // Si une instance existe déjà,
-        // et que je ne suis pas cette instance là
-        // destruction !!!
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -65,8 +63,7 @@ public class GameManager : MonoBehaviour
     {
         UiBtnPlay.SetActive(false);
         Debug.Log("Starting");
-
-
+        SteeringWheel.Setup();
         gameState = GameState.playing;
     }
 

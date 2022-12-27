@@ -7,14 +7,22 @@ public class Car : MonoBehaviour
     [Header("Car params")]
     public float speed;
     public float rotationSpeed;
+    public Steering SteeringWheel;
+
+
+
     void Update()
     {
 
         if (GameManager.Instance.gameState != GameState.playing) return;
 
 
-        float horizontalInput = Input.GetAxis("Horizontal");
+        //float horizontalInput = Input.GetAxis("Horizontal");
         //float verticalInput = Input.GetAxis("Vertical");
+
+        float horizontalInput = SteeringWheel.GetClampedValue();
+
+
         transform.Translate(0, speed * Time.deltaTime, 0);
 
 
