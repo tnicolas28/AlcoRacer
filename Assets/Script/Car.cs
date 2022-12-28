@@ -6,20 +6,15 @@ public class Car : MonoBehaviour
 {
     [Header("Car params")]
     public float speed;
+    public float speedIncrementationDebuff;
+
     public float rotationSpeed;
     public Steering SteeringWheel;
-
-
 
     void Update()
     {
 
         if (GameManager.Instance.gameState != GameState.playing) return;
-
-
-        //float horizontalInput = Input.GetAxis("Horizontal");
-        //float verticalInput = Input.GetAxis("Vertical");
-
         float horizontalInput = SteeringWheel.GetClampedValue();
 
 
@@ -41,4 +36,9 @@ public class Car : MonoBehaviour
 
     }
 
+
+    public void IncrementSpeed()
+    {
+        speed += speedIncrementationDebuff;
+    }
 }

@@ -19,6 +19,9 @@ public class Steering : MonoBehaviour
 
     bool wheelBeingHeld = false;
 
+    public AudioSource honkSound;
+
+
     public float GetClampedValue()
     {
         // returns a value in range [-1,1] similar to GetAxis("Horizontal")
@@ -40,6 +43,7 @@ public class Steering : MonoBehaviour
     public void Setup()
     {
         gameObject.SetActive(true);
+        honkSound.Play();
     }
 
     void Update()
