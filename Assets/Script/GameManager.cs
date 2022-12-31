@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     public GameObject UiBtnPlay;
 
 
-    const float delayBeforeUI = 3f;
+    const float delayBeforeUI = 8f;
     public void StopGame()
     {
         gameState = GameState.dying;
@@ -54,6 +54,9 @@ public class GameManager : MonoBehaviour
     IEnumerator GameOver()
     {
         GameOverScreen.Setup();
+        GameObject steeringWheel = GameObject.FindGameObjectWithTag("SteeringWheel");
+        steeringWheel.SetActive(false);
+
         yield return new WaitForSeconds(delayBeforeUI);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
